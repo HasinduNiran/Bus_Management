@@ -4,6 +4,11 @@ import cors from "cors";
 
 import "./scheduler.js";
 
+import customerRoutes from './Routes/Customer_route.js';
+import busOwnerRoutes from './Routes/BusOwner_route.js';
+import busRoutes from './Routes/Bus_route.js';
+
+
 // Importing custom configurations
 import { PORT, mongoDBURL } from "./config.js";
 
@@ -15,6 +20,11 @@ app.use(express.json());
 
 // Middleware for handling CORS POLICY
 app.use(cors());
+
+app.use('/Customer', customerRoutes);
+app.use('/BusOwner', busOwnerRoutes);
+app.use('/Bus', busRoutes);
+
 
 mongoose
   .connect(mongoDBURL)
