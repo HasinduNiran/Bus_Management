@@ -14,7 +14,8 @@ function Home() {
         axios
         .get('http://localhost:8077/Customer')
         .then((response)=>{
-            setCustomer(Response.data.data);
+            setCustomer(response.data);
+            
             setLoading(false);
         })
         .catch((error)=>{
@@ -58,13 +59,27 @@ function Home() {
                                 {customer.lastName}
                             </td>
                             <td className='border border-slate-700 rounded-md text-center'>
-                                {customer.Nic}
+                                {customer.NIC}
                             </td>
                             <td className='border border-slate-700 rounded-md text-center'>
-                                {customer.Phone}
+                                {customer.phone}
                             </td>
                             <td className='border border-slate-700 rounded-md text-center'>
-                                {customer.Email}
+                                {customer.email}
+                            </td>
+                            <td className='border border-slate-700 rounded-md text-center'>
+                                <div className='flex justify-center gap-x-4'>
+                                    <Link to={`/customer/details/${customer._id}`}>
+                                        <BsInfoCircle className='text-2xl text-green-800'/>
+                                    </Link>
+                                    <Link to={`/customer/edit/${customer._id}`}>
+                                        <AiOutlineEdit className='text-2xl text-yellow-800'/>
+                                    </Link>
+                                    <Link to={`/customer/delete/${customer._id}`}>
+                                        <MdOutlineDelete className='text-2xl text-red-800'/>
+                                    </Link>
+                                </div>
+
                             </td>
                         </tr>
                     ))}
