@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios'
-import Spinner from '../components/Spinner'
+import Spinner from '../../components/Spinner'
 import { Link } from 'react-router-dom'
 import { AiOutlineEdit} from 'react-icons/ai'
 import { BsInfoCircle } from 'react-icons/bs'
@@ -37,6 +37,7 @@ function Home() {
             <table className='w-full border-separate border-spacing-2'>
                 <thead>
                     <tr>
+                        <th className='border border-slate-600 rounded-md'>No</th>
                         <th className='border border-slate-600 rounded-md'>CustomerId</th>
                         <th className='border border-slate-600 rounded-md'>firstName</th>
                         <th className='border border-slate-600 rounded-md'>lastName</th>
@@ -51,6 +52,9 @@ function Home() {
                         <tr key={customer._id} className='h-8'>
                             <td className='border border-slate-700 rounded-md text-center'>
                                 {index + 1}
+                            </td>
+                            <td className='border border-slate-700 rounded-md text-center'>
+                                {customer.cusID}
                             </td>
                             <td className='border border-slate-700 rounded-md text-center'>
                                 {customer.firstName}
