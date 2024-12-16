@@ -6,7 +6,7 @@ import { AiOutlineEdit} from 'react-icons/ai'
 import { BsInfoCircle } from 'react-icons/bs'
 import { MdOutlineAddBox,MdOutlineDelete } from 'react-icons/md'
 
-function Home() {
+function CustomerHome() {
     const [customer,setCustomer]=useState([]);
     const [loading,setLoading]=useState(false);
     useEffect(()=>{
@@ -94,4 +94,4 @@ function Home() {
   )
 }
 
-export default Home
+export default CustomerHome
