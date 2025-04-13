@@ -42,3 +42,7 @@ const ConductorSchema = mongoose.Schema(
         timestamps: true,
     }
 );
+
+// Export the model
+const Conductor = mongoose.model('Conductor', ConductorSchema);
+export default Conductor;

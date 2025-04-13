@@ -42,3 +42,7 @@ const DriverSchema = mongoose.Schema(
         timestamps: true,
     }
 );
+
+// Export the model
+const Driver = mongoose.model('Driver', DriverSchema);
+export default Driver;
